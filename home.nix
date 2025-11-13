@@ -43,6 +43,10 @@
     gnumake
     claude-code
     ghostty
+    pnpm
+    zoxide
+    lazydocker
+    lazygit
   ];
 
   # basic configuration of git, please change to your own
@@ -58,7 +62,12 @@
     # TODO add your custom bashrc here
     bashrcExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+      alias cd=z
     '';
+  };
+  programs.zoxide = {
+      enable = true;
+      enableBashIntegration = true;
   };
 
   # This value determines the home Manager release that your
