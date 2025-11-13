@@ -14,27 +14,34 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
-      # TODO please change the hostname to your own
-      nixos = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./configuration.nix
+      # hostname: nixos
+      nixos = let
+        username = "longvu";
+        specialArgs = {inherit username;};
+      in
+        nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
 
-          # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+          modules = [
+            ./configuration.nix
 
-            # TODO replace ryan with your own username
-            home-manager.users.longvu = import ./home/home.nix;
+            # make home-manager as a module of nixos
+            # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
 
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-          }
-        ];
-      };
+              # TODO replace ryan with your own username
+              home-manager.extraSpecialArgs = inputs // specialArgs;
+              home-manager.users.${username} = import ./home/home.nix;
+
+              # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+            }
+          ];
+        };
     };
   };
 }

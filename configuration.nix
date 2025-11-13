@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, username, ... }:
 
 {
   imports =
@@ -82,16 +82,16 @@
   virtualisation.docker.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.longvu = {
+  users.users.${username} = {
     isNormalUser = true;
-    description = "Long Vu";
+    description = "${username}";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
     #  thunderbird
     ];
   };
 
-  # users.extraGroups.docker.members = [ "longvu" ];
+  # users.extraGroups.docker.members = [ "${username}" ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Install firefox.
@@ -113,7 +113,7 @@
     enable = true;
     # Certain features, including CLI integration and system authentication support,
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
-    polkitPolicyOwners = [ "longvu" ];
+    polkitPolicyOwners = [ "${username}" ];
   };
   # List packages installed in system profile. To search, run:
   # $ nix search wget

@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ pkgs, username, ... }:
 
 {
   # TODO please change the username & home directory to your own
-  home.username = "longvu";
-  home.homeDirectory = "/home/longvu";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
   imports = [
     ./simplenote.nix
     ./tableplus.nix
