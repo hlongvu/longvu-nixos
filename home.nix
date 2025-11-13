@@ -41,6 +41,8 @@
     go
     gnome-tweaks
     gnumake
+    claude-code
+    ghostty
   ];
 
   # basic configuration of git, please change to your own
