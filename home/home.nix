@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, username, claude-code-nix, ... }:
 
 {
   # TODO please change the username & home directory to your own
@@ -41,12 +41,14 @@
     go
     gnome-tweaks
     gnumake
-    claude-code
+    # claude-code
     ghostty
     pnpm
     zoxide
     lazydocker
     lazygit
+    claude-code-nix.packages."${pkgs.system}".claude-code
+
   ];
 
   # basic configuration of git, please change to your own
@@ -69,6 +71,7 @@
       enable = true;
       enableBashIntegration = true;
   };
+
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

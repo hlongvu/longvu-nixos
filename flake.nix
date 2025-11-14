@@ -4,6 +4,7 @@
   inputs = {
     # NixOS official package source, using the nixos-25.05 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    claude-code-nix.url = "github:sadjow/claude-code-nix";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       # The `follows` keyword in inputs is used for inheritance.
@@ -14,7 +15,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, claude-code-nix, ... }: {
     nixosConfigurations = {
       # hostname: nixos
       nixos = let
@@ -31,6 +32,7 @@
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
             {
+              # nixpkgs.overlays = [ claude-code.overlays.default ];
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
