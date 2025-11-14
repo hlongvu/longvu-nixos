@@ -51,6 +51,7 @@
 
     python314
     jq
+    tiny-rdm
   ];
 
   # basic configuration of git, please change to your own
