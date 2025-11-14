@@ -48,7 +48,7 @@
     lazydocker
     lazygit
     claude-code-nix.packages."${pkgs.system}".claude-code
-
+    
   ];
 
   # basic configuration of git, please change to your own
