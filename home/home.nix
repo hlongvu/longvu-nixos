@@ -48,7 +48,9 @@
     lazydocker
     lazygit
     claude-code-nix.packages."${pkgs.system}".claude-code
-    
+
+    python314
+    jq
   ];
 
   # basic configuration of git, please change to your own
@@ -67,9 +69,17 @@
       alias cd=z
     '';
   };
+
   programs.zoxide = {
       enable = true;
       enableBashIntegration = true;
+  };
+
+  programs.helix = {
+    enable = true;
+    settings = {
+      theme = "catppuccin_macchiato";
+    };
   };
 
 
