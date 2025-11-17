@@ -36,7 +36,7 @@
     # here is some command line tools I use frequently
     # feel free to add your own or remove some of them
 
-    neofetch
+    fastfetch
     nodejs_22
     go
     gnome-tweaks
@@ -53,6 +53,7 @@
     jq
     tiny-rdm
     gh
+    openssl
   ];
 
   # basic configuration of git, please change to your own
