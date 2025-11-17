@@ -21,7 +21,7 @@
       # hostname: nixos
       nixos = let
         username = "longvu";
-        # specialArgs = {inherit username;};
+        specialArgs = {inherit username;};
       in
         nixpkgs.lib.nixosSystem {
 

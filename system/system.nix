@@ -1,4 +1,4 @@
-{ config, lib, pkgs, username, ... }:
+{ config, lib, pkgs, username, pkgs-unstable, ... }:
 
 {	
 	
@@ -70,7 +70,7 @@
     wget
     curl
   	google-chrome
-  	vscode
+  	pkgs-unstable.vscode
   	slack
   	telegram-desktop
   	localsend
