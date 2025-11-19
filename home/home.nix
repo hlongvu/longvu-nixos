@@ -61,6 +61,12 @@
     enable = true;
     userName = "Long Vu";
     userEmail = "hlongvu@gmail.com";
+    extraConfig = {
+      safe.directory = [
+        "*"
+        # Add other safe directories as needed
+      ];
+    };
   };
 
   programs.bash = {
