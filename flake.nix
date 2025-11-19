@@ -16,48 +16,37 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nixpkgs-unstable, claude-code-nix, ... }: {
-    nixosConfigurations = {
-      # hostname: nixos
-      nixos = let
-        username = "longvu";
-        specialArgs = {inherit username;};
-      in
-        nixpkgs.lib.nixosSystem {
-
-          specialArgs = let
-            system = "x86_64-linux";
-            in {
-              inherit username;
-              # To use packages from nixpkgs-stable,
-              # we configure some parameters for it first
-              pkgs-unstable = import nixpkgs-unstable {
-                inherit system;
-                # To use Chrome, we need to allow the
-                # installation of non-free software.
-                config.allowUnfree = true;
-              };
-            };
-
-          modules = [
-            ./host/homepc/configuration.nix
-
-            # make home-manager as a module of nixos
-            # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-            home-manager.nixosModules.home-manager
-            {
-              # nixpkgs.overlays = [ claude-code.overlays.default ];
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-
-              # TODO replace ryan with your own username
-              home-manager.extraSpecialArgs = inputs // specialArgs;
-              home-manager.users.${username} = import ./home/home.nix;
-
-              # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-            }
-          ];
+  outputs = inputs@{ self, nixpkgs, home-manager, nixpkgs-unstable, ... }:
+    let
+      username = "longvu";
+      system = "x86_64-linux";
+      
+      mkHost = hostPath: nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit username;
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
+        
+        modules = [
+          hostPath
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = inputs // { inherit username; };
+              users.${username} = import ./home/home.nix;
+            };
+          }
+        ];
+      };
+    in {
+      nixosConfigurations = {
+        nixos = mkHost ./host/homepc/configuration.nix;
+        lapnix = mkHost ./host/lapnix/configuration.nix;
+      };
     };
-  };
 }
