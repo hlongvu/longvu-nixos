@@ -38,6 +38,7 @@
 
     fastfetch
     nodejs_22
+    yarn
     go
     gnome-tweaks
     gnumake
