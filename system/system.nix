@@ -77,6 +77,7 @@
   	cloudflare-warp
   	sublime4
   	sublime-merge
+    tailscale
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -94,4 +95,6 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
   services.cloudflare-warp.enable = true;
+  services.tailscale.enable = true;
+
 }
