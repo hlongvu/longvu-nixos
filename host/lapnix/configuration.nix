@@ -17,6 +17,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
+  boot.kernelParams = [ "psmouse.synaptics_intertouch=0" ];
+
 
   services.xserver.videoDrivers = ["nvidia"];
 
