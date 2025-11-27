@@ -85,6 +85,7 @@
     # TODO add your custom bashrc here
     bashrcExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+      export PATH="$HOME/.npm-global/bin:$PATH"
       EDITOR='hx' 
       alias cd=z
 
