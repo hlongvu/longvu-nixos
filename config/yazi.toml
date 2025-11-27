@@ -1,0 +1,27 @@
+[opener]
+edit = [
+        { run = '$EDITOR "$@"', block = true, for = "unix" },
+]
+code = [
+        { run = 'code "$@"', desc = "VSCode" },
+]
+
+sublime = [
+        { run = 'subl "$@"', desc = "Sublime" },
+]
+
+smerge = [
+        { run = 'smerge "$@"', desc = "Merge" },
+]
+
+open = [
+    { run = 'xdg-open "$1"', desc = "Open"},
+]
+
+[open]
+rules = [
+    # Folder
+    { name = "*/", use = ["edit", "code", "sublime", "smerge"] },
+    # Fallback
+    { name = "*", use = ["open", "sublime"] },
+]

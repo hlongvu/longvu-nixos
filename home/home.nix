@@ -25,6 +25,13 @@
   #     xxx
   # '';
 
+
+  home.file= {
+    ".config/yazi/yazi.toml" = {
+      source = ../config/yazi.toml;
+    };
+  };
+
   # set cursor size and dpi for 4k monitor
   #xresources.properties = {
   #  "Xcursor.size" = 16;
@@ -110,6 +117,7 @@
     bind -r g popup -d '#{pane_current_path}' -E -w 90% -h 90% lazygit
     '';
   };
+
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
