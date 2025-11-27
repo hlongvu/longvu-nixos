@@ -96,5 +96,6 @@
   # services.openssh.enable = true;
   services.cloudflare-warp.enable = true;
   services.tailscale.enable = true;
+  services.resolved.enable = true;
 
 }
