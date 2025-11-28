@@ -30,7 +30,12 @@
     ".config/yazi/yazi.toml" = {
       source = ../config/yazi.toml;
     };
+    ".config/bash/bashrc_extra" = {
+      source = ../config/bashrc_extra;
+    };
   };
+
+
 
   # set cursor size and dpi for 4k monitor
   #xresources.properties = {
@@ -83,19 +88,11 @@
     enable = true;
     enableCompletion = true;
     # TODO add your custom bashrc here
+    # npm config set prefix '~/.npm-global'
     bashrcExtra = ''
-      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-      export PATH="$HOME/.npm-global/bin:$PATH"
-      EDITOR='hx' 
-      alias cd=z
-
-      function y() {
-        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-        yazi "$@" --cwd-file="$tmp"
-        IFS= read -r -d ''' cwd < "$tmp"
-        [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-        rm -f -- "$tmp"
-      }
+      if [ -f ~/.config/bash/bashrc_extra ]; then
+          . ~/.config/bash/bashrc_extra
+      fi
     '';
   };
 
