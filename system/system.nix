@@ -68,7 +68,6 @@
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    curl
     xsel
   	google-chrome
   	pkgs-unstable.vscode
@@ -88,8 +87,20 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-  
-  
+
+  # Enable nix-ld for running dynamically linked executables (like Claude Code VSCode extension)
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Standard C/C++ libraries
+    stdenv.cc.cc.lib
+
+    # Common dependencies for dynamically linked binaries
+    zlib
+    openssl
+    curl
+    libgcc
+    glibc
+  ];
 
   # List services that you want to enable:
 
