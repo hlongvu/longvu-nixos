@@ -20,14 +20,15 @@
     let
       username = "longvu";
       system = "x86_64-linux";
-      
-      mkHost = hostPath: nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit username;
-          pkgs-unstable = import nixpkgs-unstable {
+      pkgs-unstable = import nixpkgs-unstable {
             inherit system;
             config.allowUnfree = true;
           };
+
+      mkHost = hostPath: nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit username;
+          inherit pkgs-unstable;
         };
         
         modules = [
@@ -37,7 +38,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              extraSpecialArgs = inputs // { inherit username; };
+              extraSpecialArgs = inputs // { inherit username; pkgs-unstable = pkgs-unstable; };
               users.${username} = import ./home/home.nix;
             };
           }

@@ -1,4 +1,4 @@
-{ pkgs, username, claude-code-nix, ... }:
+{ pkgs, username, claude-code-nix, pkgs-unstable, ... }:
 
 {
   # TODO please change the username & home directory to your own
@@ -69,6 +69,7 @@
     openssl
     btop
     yazi
+    pkgs-unstable.gemini-cli
   ];
 
   # basic configuration of git, please change to your own
