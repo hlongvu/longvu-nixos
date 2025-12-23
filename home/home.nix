@@ -94,6 +94,9 @@
       if [ -f ~/.config/bash/bashrc_extra ]; then
           . ~/.config/bash/bashrc_extra
       fi
+      if [ -f ~/.config/bash/bashrc_manual ]; then
+          . ~/.config/bash/bashrc_manual
+      fi
     '';
   };
 
