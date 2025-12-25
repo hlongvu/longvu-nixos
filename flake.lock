@@ -106,12 +106,47 @@
         "type": "github"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1766532406,
+        "narHash": "sha256-acLU/ag9VEoKkzOD202QASX25nG1eArXg5A0mHjKgxM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "8142186f001295e5a3239f485c8a49bf2de2695a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "opencode": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1766642367,
+        "narHash": "sha256-csJKqoVNjhhVKKzkUw1HOvDcZW3B6cjuQRfHPd5seYw=",
+        "owner": "sst",
+        "repo": "opencode",
+        "rev": "388d40e41f4084fed5766c8dc066ba6e69da7509",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sst",
+        "repo": "opencode",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "claude-code-nix": "claude-code-nix",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "opencode": "opencode"
       }
     },
     "systems": {

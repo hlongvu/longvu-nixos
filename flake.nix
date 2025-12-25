@@ -6,6 +6,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     claude-code-nix.url = "github:sadjow/claude-code-nix";
+    opencode.url = "github:sst/opencode";
+    
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       # The `follows` keyword in inputs is used for inheritance.

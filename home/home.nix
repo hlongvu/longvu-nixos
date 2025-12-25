@@ -1,4 +1,4 @@
-{ pkgs, username, claude-code-nix, pkgs-unstable, ... }:
+{ pkgs, inputs, username, claude-code-nix, pkgs-unstable, opencode, ... }:
 
 {
   # TODO please change the username & home directory to your own
@@ -61,7 +61,7 @@
     lazydocker
     lazygit
     claude-code-nix.packages."${pkgs.system}".claude-code
-
+    opencode.packages.${pkgs.system}.default
     python314
     jq
     tiny-rdm
