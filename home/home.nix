@@ -70,6 +70,7 @@
     btop
     yazi
     pkgs-unstable.gemini-cli
+    ngrok
   ];
 
   # basic configuration of git, please change to your own
