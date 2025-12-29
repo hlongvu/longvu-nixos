@@ -63,7 +63,7 @@
     claude-code-nix.packages."${pkgs.system}".claude-code
     opencode.packages.${pkgs.system}.default
     snitch.packages.${pkgs.system}.default
-    python314
+    pkgs-unstable.uv
     jq
     tiny-rdm
     gh
