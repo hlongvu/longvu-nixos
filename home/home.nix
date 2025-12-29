@@ -1,4 +1,4 @@
-{ pkgs, inputs, username, claude-code-nix, pkgs-unstable, opencode, ... }:
+{ pkgs, inputs, username, claude-code-nix, pkgs-unstable, opencode, snitch, ... }:
 
 {
   # TODO please change the username & home directory to your own
@@ -62,6 +62,7 @@
     lazygit
     claude-code-nix.packages."${pkgs.system}".claude-code
     opencode.packages.${pkgs.system}.default
+    snitch.packages.${pkgs.system}.default
     python314
     jq
     tiny-rdm

@@ -122,6 +122,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1766201043,
+        "narHash": "sha256-eplAP+rorKKd0gNjV3rA6+0WMzb1X1i16F5m5pASnjA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b3aad468604d3e488d627c0b43984eb60e75e782",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "opencode": {
       "inputs": {
         "nixpkgs": "nixpkgs_3"
@@ -146,7 +162,26 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "opencode": "opencode"
+        "opencode": "opencode",
+        "snitch": "snitch"
+      }
+    },
+    "snitch": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1766705587,
+        "narHash": "sha256-WetlA7ET6VkX5WpzCxTU8xZW/U8ajaOpb1AipwkxVJ8=",
+        "owner": "karol-broda",
+        "repo": "snitch",
+        "rev": "7c757f2769e26c36f3d32cee2063bb6b55b11988",
+        "type": "github"
+      },
+      "original": {
+        "owner": "karol-broda",
+        "repo": "snitch",
+        "type": "github"
       }
     },
     "systems": {

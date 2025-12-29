@@ -7,6 +7,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     claude-code-nix.url = "github:sadjow/claude-code-nix";
     opencode.url = "github:sst/opencode";
+    snitch.url = "github:karol-broda/snitch";
     
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
