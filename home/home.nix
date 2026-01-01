@@ -33,6 +33,15 @@
     ".config/bash/bashrc_extra" = {
       source = ../config/bashrc_extra;
     };
+    ".config/tmux/tmux.conf" = {
+      source = ../config/tmux.conf;
+    };
+    ".config/helix/config.toml" = {
+      source = ../config/helix.toml;
+    };
+    ".config/helix/yazi-picker.sh" = {
+      source = ../config/yazi-picker.sh;
+    };
   };
 
 
@@ -72,6 +81,8 @@
     yazi
     pkgs-unstable.gemini-cli
     ngrok
+    tmux
+    helix
   ];
 
   # basic configuration of git, please change to your own
@@ -105,21 +116,6 @@
   programs.zoxide = {
       enable = true;
       enableBashIntegration = true;
-  };
-
-  programs.helix = {
-    enable = true;
-    settings = {
-      theme = "catppuccin_macchiato";
-    };
-  };
-
-  programs.tmux = {
-    enable = true;
-    clock24 = true;
-    extraConfig = ''
-    bind -r g popup -d '#{pane_current_path}' -E -w 90% -h 90% lazygit
-    '';
   };
 
 

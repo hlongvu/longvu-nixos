@@ -18,10 +18,20 @@ open = [
     { run = 'xdg-open "$1"', desc = "Open"},
 ]
 
+edit-in-helix = [
+        { run = 'tmux send-keys -t {left} Escape ":open $@" Enter && tmux select-pane -t {left}', desc = "Open in Helix" }
+]
+
 [open]
 rules = [
     # Folder
     { name = "*/", use = ["edit", "code", "sublime", "smerge"] },
     # Fallback
-    { name = "*", use = ["open", "sublime"] },
+    { name = "*", use = ["open", "sublime", "edit-in-helix"] },
+]
+
+[pick]
+prepend_keymap = [
+    # Bind Ctrl+O to open the interactive "open with" menu
+    { on = "<C-o>", run = "open --interactive", desc = "Open with..." },
 ]
