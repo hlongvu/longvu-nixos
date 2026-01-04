@@ -74,7 +74,6 @@
     snitch.packages.${pkgs.system}.default
     pkgs-unstable.uv
     jq
-    tiny-rdm
     gh
     openssl
     btop
