@@ -83,6 +83,7 @@
     tmux
     helix
     rsync
+    pkgs-unstable.rclone
   ];
 
   # basic configuration of git, please change to your own
