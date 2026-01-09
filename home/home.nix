@@ -69,9 +69,9 @@
     zoxide
     lazydocker
     lazygit
-    claude-code-nix.packages."${pkgs.system}".claude-code
-    opencode.packages.${pkgs.system}.default
-    snitch.packages.${pkgs.system}.default
+    claude-code-nix.packages."${pkgs.stdenv.hostPlatform.system}".claude-code
+    opencode.packages.${pkgs.stdenv.hostPlatform.system}.default
+    snitch.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs-unstable.uv
     jq
     gh
@@ -89,9 +89,9 @@
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
-    userName = "Long Vu";
-    userEmail = "hlongvu@gmail.com";
-    extraConfig = {
+    settings = {
+      user.name = "Long Vu";
+      user.email = "hlongvu@gmail.com";
       safe.directory = [
         "*"
         # Add other safe directories as needed
