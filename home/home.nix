@@ -70,7 +70,9 @@
     lazydocker
     lazygit
     claude-code-nix.packages."${pkgs.stdenv.hostPlatform.system}".claude-code
-    opencode.packages.${pkgs.stdenv.hostPlatform.system}.default
+    (opencode.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
+      bun = pkgs-unstable.bun; 
+    })
     snitch.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs-unstable.uv
     jq
