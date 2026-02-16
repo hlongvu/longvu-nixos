@@ -87,6 +87,7 @@
     rsync
     pkgs-unstable.rclone
     winbox
+    aria2
   ];
 
   # basic configuration of git, please change to your own
