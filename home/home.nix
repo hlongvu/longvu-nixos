@@ -39,9 +39,6 @@
     ".config/helix/config.toml" = {
       source = ../config/helix.toml;
     };
-    ".config/helix/yazi-picker.sh" = {
-      source = ../config/yazi-picker.sh;
-    };
   };
 
 
@@ -88,6 +85,7 @@
     pkgs-unstable.rclone
     winbox
     aria2
+    fzf
   ];
 
   # basic configuration of git, please change to your own
