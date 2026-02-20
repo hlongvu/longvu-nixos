@@ -41,6 +41,7 @@
     };
     ".config/tmux-tools/tmux-session-switcher.sh" = {
       source = ../config/tmux-session-switcher.sh;
+      executable = true;
     };
   };
 
