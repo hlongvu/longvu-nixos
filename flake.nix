@@ -8,6 +8,7 @@
     claude-code-nix.url = "github:sadjow/claude-code-nix";
     opencode.url = "github:anomalyco/opencode";
     snitch.url = "github:karol-broda/snitch";
+    llm-agents.url = "github:numtide/llm-agents.nix";
     
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -32,9 +33,13 @@
         specialArgs = {
           inherit username;
           inherit pkgs-unstable;
+          inherit (inputs) llm-agents;
         };
         
         modules = [
+          {
+            nixpkgs.overlays = [ inputs.llm-agents.overlays.default ];
+          }
           hostPath
           home-manager.nixosModules.home-manager
           {

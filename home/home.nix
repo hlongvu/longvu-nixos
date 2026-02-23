@@ -70,10 +70,13 @@
     zoxide
     lazydocker
     lazygit
-    claude-code-nix.packages."${pkgs.stdenv.hostPlatform.system}".claude-code
-    (opencode.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
-      bun = pkgs-unstable.bun; 
-    })
+#    claude-code-nix.packages."${pkgs.stdenv.hostPlatform.system}".claude-code
+#    (opencode.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
+#      bun = pkgs-unstable.bun; 
+#    })
+    pkgs.llm-agents.claude-code
+    pkgs.llm-agents.gemini-cli
+    pkgs.llm-agents.codex
     snitch.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs-unstable.uv
     jq
@@ -81,7 +84,7 @@
     openssl
     btop
     yazi
-    pkgs-unstable.gemini-cli
+#    pkgs-unstable.gemini-cli
     ngrok
     tmux
     helix
