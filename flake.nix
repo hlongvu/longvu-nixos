@@ -1,6 +1,11 @@
 {
   description = "A simple NixOS flake";
 
+  nixConfig = {
+    extra-substituters = [ "https://cache.numtide.com" ];
+    extra-trusted-public-keys = [ "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g=" ];
+  };
+
   inputs = {
     # NixOS official package source, using the nixos-25.05 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";

@@ -76,7 +76,7 @@
 #    })
     pkgs.llm-agents.claude-code
     pkgs.llm-agents.gemini-cli
-    pkgs.llm-agents.codex
+    pkgs.llm-agents.opencode
     snitch.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs-unstable.uv
     jq
