@@ -51,7 +51,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              extraSpecialArgs = inputs // { inherit username; pkgs-unstable = pkgs-unstable; };
+              extraSpecialArgs = inputs // { inherit username pkgs-unstable; };
               users.${username} = import ./home/home.nix;
             };
           }
