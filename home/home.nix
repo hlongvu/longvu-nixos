@@ -79,6 +79,7 @@
     pkgs.llm-agents.opencode
     snitch.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs-unstable.uv
+    pkgs-unstable.zed-editor
     jq
     gh
     openssl
