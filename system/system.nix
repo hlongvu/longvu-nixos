@@ -28,12 +28,14 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
   virtualisation.docker.enable = true;
+  virtualisation.incus.enable = true;
+
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     isNormalUser = true;
     description = "${username}";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "incus-admin" ];
     packages = with pkgs; [
     #  thunderbird
     ];
