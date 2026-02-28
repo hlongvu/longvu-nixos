@@ -18,7 +18,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelParams = [ "psmouse.synaptics_intertouch=0" ];
-
+  boot.kernelModules = [ "kvm-intel" ];
 
   services.xserver.videoDrivers = ["nvidia"];
 

@@ -35,7 +35,7 @@
   users.users.${username} = {
     isNormalUser = true;
     description = "${username}";
-    extraGroups = [ "networkmanager" "wheel" "docker" "incus-admin" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "incus-admin" "kvm"];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -80,6 +80,8 @@
   	sublime4
   	sublime-merge
     tailscale
+    virt-viewer
+    spice-gtk
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
