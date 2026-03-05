@@ -94,6 +94,7 @@
     winbox
     aria2
     fzf
+    unrar
   ];
 
   # basic configuration of git, please change to your own
