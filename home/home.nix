@@ -95,6 +95,7 @@
     aria2
     fzf
     unrar
+    pkgs-unstable.deskflow
   ];
 
   # basic configuration of git, please change to your own
