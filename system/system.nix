@@ -35,7 +35,7 @@
   users.users.${username} = {
     isNormalUser = true;
     description = "${username}";
-    extraGroups = [ "networkmanager" "wheel" "docker" "incus-admin" "kvm"];
+    extraGroups = [ "networkmanager" "wheel" "docker" "incus-admin" "kvm" "dialout"];
     packages = with pkgs; [
     #  thunderbird
     ];
