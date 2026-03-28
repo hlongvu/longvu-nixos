@@ -95,7 +95,6 @@
     aria2
     fzf
     unrar
-    arduino-ide
   ];
 
   # basic configuration of git, please change to your own
