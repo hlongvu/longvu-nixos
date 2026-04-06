@@ -95,6 +95,7 @@
     aria2
     fzf
     unrar
+    pciutils
   ];
 
   # basic configuration of git, please change to your own
