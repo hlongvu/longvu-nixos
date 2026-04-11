@@ -96,6 +96,7 @@
     fzf
     unrar
     pciutils
+    yt-dlp
   ];
 
   # basic configuration of git, please change to your own
