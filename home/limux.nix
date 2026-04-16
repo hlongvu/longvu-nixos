@@ -41,6 +41,7 @@ let
       Name=Limux
       Icon=${pname}
       Exec=${pname} %F
+      StartupWMClass=dev.limux.linux
       Categories=System;TerminalEmulator;
       Comment=GPU-accelerated terminal workspace manager
       EOF
