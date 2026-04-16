@@ -8,6 +8,7 @@
     ./simplenote.nix
     ./tableplus.nix
     ./dashdock.nix
+    ./limux.nix
   ];
 
   # link the configuration file in current directory to the specified location in home directory
