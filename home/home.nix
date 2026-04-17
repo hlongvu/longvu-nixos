@@ -63,6 +63,7 @@
     nodejs_22
     yarn
     go
+    gcc
     gnome-tweaks
     gnumake
     # claude-code
