@@ -100,6 +100,7 @@
     pciutils
     yt-dlp
     filezilla
+    ffmpeg
   ];
 
   # basic configuration of git, please change to your own
