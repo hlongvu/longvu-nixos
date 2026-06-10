@@ -8,7 +8,6 @@
     ./simplenote.nix
     ./tableplus.nix
     ./dashdock.nix
-    ./limux.nix
   ];
 
   # link the configuration file in current directory to the specified location in home directory
@@ -79,6 +78,7 @@
     pkgs.llm-agents.claude-code
     pkgs.llm-agents.gemini-cli
     pkgs.llm-agents.opencode
+    pkgs.llm-agents.herdr
     snitch.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs-unstable.uv
     pkgs-unstable.zed-editor
