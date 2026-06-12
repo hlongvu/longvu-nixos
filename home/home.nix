@@ -87,7 +87,6 @@
     openssl
     btop
     yazi
-#    pkgs-unstable.gemini-cli
     ngrok
     tmux
     helix

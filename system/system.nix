@@ -57,9 +57,6 @@
 
   nixpkgs.config.permittedInsecurePackages = [
     "openssl-1.1.1w"
-    "docker-28.5.2"
-    "incus-lts-6.0.6-unstable-2026-03-27"
-    "incus-lts-client-6.0.6-unstable-2026-03-27"
   ];
   programs._1password.enable = true;
   programs._1password-gui = {
