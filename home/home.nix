@@ -93,7 +93,6 @@
     helix
     rsync
     pkgs-unstable.rclone
-    winbox
     aria2
     fzf
     unrar
