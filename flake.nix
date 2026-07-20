@@ -43,7 +43,7 @@
         
         modules = [
           {
-            nixpkgs.overlays = [ inputs.llm-agents.overlays.default ];
+            nixpkgs.overlays = [ inputs.llm-agents.overlays.shared-nixpkgs ];
           }
           hostPath
           home-manager.nixosModules.home-manager
