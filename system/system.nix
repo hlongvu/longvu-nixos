@@ -72,7 +72,7 @@
     wget
     xsel
   	google-chrome
-  	pkgs-unstable.vscode
+  	#pkgs-unstable.vscode
   	slack
   	telegram-desktop
   	localsend

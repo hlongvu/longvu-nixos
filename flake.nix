@@ -61,6 +61,7 @@
       nixosConfigurations = {
         nixos = mkHost ./host/homepc/configuration.nix;
         lapnix = mkHost ./host/lapnix/configuration.nix;
+        getac = mkHost ./host/getac/configuration.nix;
       };
     };
 }
