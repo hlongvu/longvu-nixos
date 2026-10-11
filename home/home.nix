@@ -78,7 +78,7 @@
     pkgs.llm-agents.claude-code
     pkgs.llm-agents.gemini-cli
     pkgs.llm-agents.opencode
-    pkgs.llm-agents.herdr
+    #pkgs.llm-agents.herdr
     pkgs.llm-agents.zcode
     snitch.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs-unstable.uv

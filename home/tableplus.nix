@@ -2,7 +2,7 @@
  { config, pkgs, ... }:
 
 let
-  sha = "sha256-iZyk1YUftfL3EvAK12/kRTre6xTcFuB8sJrNLilpu30=";
+  sha = "sha256-i1Z2lwz2dk52rbpHTzwx5M/rVPBhccuGz3gGE/JfAlk=";
   pname = "tableplus"; # Required by appimageTools.extract
   version = "64";
   linkAppImageURL = "https://tableplus.com/release/linux/x${version}/TablePlus-x${version}.AppImage";
